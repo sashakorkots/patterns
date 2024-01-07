@@ -8,34 +8,17 @@ namespace Patterns.FactoryPattern
 {
     public class Delivery
     {
-        private Ship ship;
-        private Truck truck;
-        private Plane plane;
+        private Logistics logistic;
 
-        public Delivery() 
+        public Delivery(Logistics logistic) 
         {
-            this.ship = new Ship();
-            this.truck = new Truck();
-            this.plane = new Plane();
+            this.logistic = logistic;
         }
 
-        public void ByTruck()
+        public void Execute()
         {                
-            ship.PlanDelivery();
-            ship.Deliver();
-            return;
-        }
-
-        public void ByShip()
-        {
-            truck.PlanDelivery();
-            truck.Deliver();
-            return;
-        }
-
-        public void ByPlane()
-    {                plane.PlanDelivery();
-            plane.Deliver();
+            logistic.PlanDelivery();
+            logistic.Deliver();
             return;
         }
     }
