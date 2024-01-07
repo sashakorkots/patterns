@@ -1,6 +1,6 @@
 ﻿namespace Patterns.FactoryPattern
 {
-    public class Plane
+    public class Plane : ITransport
     {
         public Plane() { }
         public void PlanDelivery() { }

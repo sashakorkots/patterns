@@ -6,28 +6,25 @@ namespace TestPatterns.FactoryPattern
 {
     public class DeliveryTests
     {
-        private Delivery delivery;
-
-        public DeliveryTests()
-        {
-            this.delivery = new Delivery();
-        }
         [Fact]
         public void DeliveryByTruck()
         {
-            delivery.ByTruck();
+            Delivery delivery = new Delivery(new RoadLogistics());
+            delivery.Execute();
         }
 
         [Fact]
         public void DeliveryByShip()
         {
-            delivery.ByShip();
+            Delivery delivery = new Delivery(new SeaLogistics());
+            delivery.Execute();
         }
 
         [Fact]
         public void DeliveryByPlane()
         {
-            delivery.ByPlane();
+            Delivery delivery = new Delivery(new AirLogistics());
+            delivery.Execute();
         }
     }
 }
